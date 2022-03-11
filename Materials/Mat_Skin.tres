@@ -1,0 +1,40 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://Materials/TriPlanar.tres" type="Shader" id=1]
+[ext_resource path="res://Materials/Rocks013/Rocks013_1K_Displacement.png" type="Texture" id=2]
+[ext_resource path="res://Materials/Lava005/Lava005_1K_NormalGL.png" type="Texture" id=3]
+[ext_resource path="res://Materials/Rocks013/Rocks013_1K_NormalGL.png" type="Texture" id=4]
+[ext_resource path="res://Materials/Lava005/Lava005_1K_Displacement.png" type="Texture" id=5]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/AB_mix_offset = -6.187
+shader_param/AB_mix_normal = 8.253
+shader_param/AB_mix_blend = 1.897
+shader_param/A_albedo_enabled = true
+shader_param/A_albedo_tint = Color( 0.796078, 0.482353, 0.482353, 1 )
+shader_param/A_normal_enabled = true
+shader_param/A_normal_strength = 16.0
+shader_param/A_roughness = 0.882
+shader_param/A_ao_tex_channel = Plane( 0.33, 0.33, 0.33, 0 )
+shader_param/A_ao_enabled = false
+shader_param/A_ao_strength = 1.0
+shader_param/A_uv_offset = null
+shader_param/A_uv_tiles = 1
+shader_param/A_tri_blend_sharpness = 17.86
+shader_param/B_albedo_enabled = true
+shader_param/B_albedo_tint = Color( 0.796078, 0.482353, 0.482353, 1 )
+shader_param/B_normal_enabled = true
+shader_param/B_normal_strength = 1.887
+shader_param/B_normal_distance = 0.025
+shader_param/B_roughness = 0.0
+shader_param/B_ao_tex_channel = Plane( 0.33, 0.33, 0.33, 0 )
+shader_param/B_ao_enabled = false
+shader_param/B_ao_strength = 1.0
+shader_param/B_uv_offset = null
+shader_param/B_uv_tiles = 1
+shader_param/B_tri_blend_sharpness = 10.168
+shader_param/A_albedo_map = ExtResource( 2 )
+shader_param/A_normal_map = ExtResource( 4 )
+shader_param/B_albedo_map = ExtResource( 5 )
+shader_param/B_normal_map = ExtResource( 3 )

@@ -1,0 +1,11 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Materials/Lava005/Lava005_1K_Roughness.png" type="Texture" id=1]
+[ext_resource path="res://Materials/Lava005/Lava005_1K_NormalGL.png" type="Texture" id=2]
+
+[resource]
+albedo_color = Color( 0.843137, 0.54902, 0.486275, 1 )
+albedo_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )

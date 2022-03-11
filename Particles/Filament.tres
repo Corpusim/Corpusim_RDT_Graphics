@@ -1,0 +1,97 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "// NOTE: Shader automatically converted from Godot Engine 3.5.beta's SpatialMaterial.
+
+shader_type spatial;
+render_mode async_visible,blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo1 : hint_color;
+uniform vec4 albedo2 : hint_color;
+uniform float blend_area : hint_range(-.5,2.0);
+uniform float blend_center : hint_range(-.5,1.2);
+uniform sampler2D texture_albedo : hint_albedo;
+uniform float specular;
+uniform float metallic;
+uniform float roughness : hint_range(0,1);
+uniform float point_size : hint_range(0,128);
+uniform sampler2D texture_roughness : hint_white;
+uniform vec4 roughness_texture_channel;
+uniform sampler2D texture_normal : hint_normal;
+uniform float normal_scale : hint_range(-16,16);
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+uniform float time_scale = 1.0;
+
+uniform float rot_scalar_1 = 2.0;
+uniform float rot_scalar_2 = 0.3;
+uniform float rot_scalar_3 = 0.8;
+
+float rand(vec2 co){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+
+
+void vertex() {
+	
+	UV=UV*uv1_scale.xy+uv1_offset.xy;
+		
+	float id = float(INSTANCE_ID);
+	float custom = rand(vec2(id, id));
+	
+	
+	
+	
+	
+	// rotation
+	float time = custom * TIME * time_scale; // INSTANCE_CUSTOM.x;
+	float pivot_angle = time * rot_scalar_1 ;// * pivot;
+	mat2 rotation_matrix = mat2(vec2(cos(pivot_angle), -sin(pivot_angle)), vec2(sin(pivot_angle), cos(pivot_angle)));
+	VERTEX.xy = rotation_matrix * VERTEX.xy;
+	
+	pivot_angle = (time * rot_scalar_2) - (rot_scalar_2 * cos(time));// * pivot;
+	rotation_matrix = mat2(vec2(cos(pivot_angle), -sin(pivot_angle)), vec2(sin(pivot_angle), cos(pivot_angle)));
+	VERTEX.xz = rotation_matrix * VERTEX.xz;
+	
+	pivot_angle =  cos(time) * rot_scalar_3;// * pivot;
+	rotation_matrix = mat2(vec2(cos(pivot_angle), -sin(pivot_angle)), vec2(sin(pivot_angle), cos(pivot_angle)));
+	VERTEX.yz = rotation_matrix * VERTEX.yz;
+	
+	
+	
+	
+	// translation
+	VERTEX.x += .4*sin(time)+.6*sin(time*.4);
+	VERTEX.y +=  (1.-smoothstep(4.0,8.0,VERTEX.y))*custom*12.0 + sin(time*.6)+0.4*sin(time*.3);
+	VERTEX.z += .4*sin(time*.25)+.5*sin(time*.55);
+	
+	
+	
+	
+
+}
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	
+	float blend_low = blend_center-blend_area;
+	float blend_high = blend_center+blend_area;
+	
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	vec3 blend_val = smoothstep(blend_low,blend_high,albedo_tex.rgb);
+	
+	ALBEDO = albedo1.rgb * blend_val + albedo2.rgb * (1.0-blend_val);
+	METALLIC = metallic;
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+	NORMALMAP = texture(texture_normal,base_uv).rgb;
+	NORMALMAP_DEPTH = normal_scale;
+}
+"

@@ -1,0 +1,103 @@
+[gd_resource type="VoxelGeneratorGraph" load_steps=4 format=2]
+
+[sub_resource type="FastNoiseLite" id=7]
+noise_type = 4
+period = 128.0
+fractal_type = 3
+cellular_return_type = 0
+
+[sub_resource type="FastNoiseLite" id=9]
+noise_type = 2
+period = 10.0
+fractal_octaves = 1
+cellular_return_type = 0
+
+[sub_resource type="FastNoiseLite" id=8]
+noise_type = 2
+period = 10.0
+fractal_octaves = 1
+fractal_gain = 200.0
+cellular_distance_function = 0
+cellular_return_type = 3
+
+[resource]
+graph_data = {
+"connections": [ [ 63, 0, 6, 1 ], [ 6, 0, 36, 0 ], [ 36, 0, 65, 0 ], [ 3, 0, 25, 1 ], [ 3, 0, 39, 1 ], [ 3, 0, 46, 1 ], [ 26, 0, 6, 0 ], [ 1, 0, 25, 0 ], [ 1, 0, 46, 0 ], [ 1, 0, 39, 0 ], [ 45, 0, 63, 0 ], [ 27, 0, 26, 1 ], [ 38, 0, 63, 1 ], [ 25, 0, 27, 0 ], [ 2, 0, 26, 0 ], [ 2, 0, 39, 2 ], [ 46, 0, 38, 0 ], [ 39, 0, 45, 0 ] ],
+"nodes": {
+"1": {
+"gui_position": Vector2( 400, 40 ),
+"type": "InputX"
+},
+"2": {
+"gui_position": Vector2( 400, -120 ),
+"type": "InputY"
+},
+"25": {
+"gui_position": Vector2( 800, -20 ),
+"noise": SubResource( 7 ),
+"type": "FastNoise2D"
+},
+"26": {
+"gui_position": Vector2( 1180, -120 ),
+"type": "Add"
+},
+"27": {
+"b": 13.0,
+"gui_position": Vector2( 980, -20 ),
+"type": "Multiply"
+},
+"3": {
+"gui_position": Vector2( 400, 160 ),
+"type": "InputZ"
+},
+"36": {
+"b": 13.0,
+"gui_position": Vector2( 1580, -120 ),
+"type": "Add"
+},
+"38": {
+"b": 2.0,
+"gui_position": Vector2( 1100, 240 ),
+"type": "Multiply"
+},
+"39": {
+"gui_position": Vector2( 760, 100 ),
+"noise": SubResource( 8 ),
+"type": "FastNoise3D"
+},
+"45": {
+"b": 8.0,
+"gui_position": Vector2( 960, 100 ),
+"type": "Multiply"
+},
+"46": {
+"gui_position": Vector2( 760, 240 ),
+"noise": SubResource( 9 ),
+"type": "FastNoise2D"
+},
+"6": {
+"gui_position": Vector2( 1420, -120 ),
+"type": "Add"
+},
+"60": {
+"a": 0.0,
+"b": 2.0,
+"gui_position": Vector2( 1480, 60 ),
+"type": "Divide"
+},
+"62": {
+"a": 0.0,
+"b": 0.0,
+"gui_position": Vector2( 1320, 100 ),
+"type": "Add"
+},
+"63": {
+"gui_position": Vector2( 1160, 20 ),
+"type": "Subtract"
+},
+"65": {
+"gui_position": Vector2( 1860, -100 ),
+"type": "OutputSDF"
+}
+}
+}
