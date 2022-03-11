@@ -4,7 +4,7 @@ updated 2022-03-11
 
 ![Corpusim Image](corpusim_banner.jpg)
 
-This is a development and testing environment for procedural graphics - one of the core technologies used in Corpusim. Here we're focusing on implementing squamous epithelial tissues, essentially flaky, flat, barrier layers.
+This is a **Research, Discovery, and Testing** environment for procedural graphics - one of the core technologies used in Corpusim. Here we're focusing on implementing squamous epithelial tissues, essentially flaky, flat, barrier layers.
 
 This project is written in [Godot](https://godotengine.org/) 3.4 and the [voxel-tools](https://github.com/Zylann/godot_voxel) plugin.
 
