@@ -4,23 +4,25 @@ updated 2022-03-11
 
 ![Corpusim Image](corpusim_banner.jpg)
 
-This is a **Research, Discovery, and Testing** environment for procedural graphics - one of the core technologies used in Corpusim. Here we're focusing on implementing squamous epithelial tissues, essentially flaky, flat, barrier layers.
+This is a **Research, Discovery, and Testing** environment for procedural graphics - one of the core technologies used in [Corpusim](http://www.corpusim.com). Here we're focusing on implementing squamous epithelial tissues, essentially flaky, flat, barrier layers.
 
 This project is written in [Godot](https://godotengine.org/) 3.4 and the [voxel-tools](https://github.com/Zylann/godot_voxel) plugin.
 
 ## Controls
 
-<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> : Forward / Backward and Strafe
+<kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> : Forward, Left, Backward, Right (Strafe)
 
-<kbd>Shift</kbd><kbd>Space</kbd> : Up / Down
+<kbd>Space</kbd> <kbd>Shift</kbd> : Up, Down
 
-Mouse Buttons : Add / Remove Voxels
+Mouse : Look / Rotate
+
+Mouse Buttons : Add / Remove Tissue (Voxels)
 
 ### Using Virtual Reality Headset
 
 Toggle the `VR Mode` check box in the `PlayerProbe` Scene
 
-
+VR Headset will replace mouse for Look / Rotate
 
 ## Implementation
 
