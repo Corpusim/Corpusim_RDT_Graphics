@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Generator_Scripts/GeneratorManager.gd" type="Script" id=1]
 [ext_resource path="res://VR/VR_utilities.gd" type="Script" id=2]
 [ext_resource path="res://Materials/tut_shader.gdshader" type="Shader" id=3]
 [ext_resource path="res://Materials/Lava005/Lava005_1K_Roughness.png" type="Texture" id=4]
 [ext_resource path="res://Materials/Textures/Gravel020_1K_Displacement.png" type="Texture" id=5]
-[ext_resource path="res://Generator_Graphs/Lace.tres" type="VoxelGeneratorGraph" id=6]
+[ext_resource path="res://Generator_Graphs/SpongyBone.tres" type="VoxelGeneratorGraph" id=6]
 [ext_resource path="res://Probe/Probe.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Probe/VoxelCutter.tscn" type="PackedScene" id=8]
 
@@ -19,7 +18,7 @@ background_sky = SubResource( 7 )
 background_color = Color( 0.258824, 0.203922, 0.203922, 1 )
 background_energy = 3.57
 
-[sub_resource type="VoxelMesherTransvoxel" id=6]
+[sub_resource type="VoxelMesherTransvoxel" id=9]
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 3 )
@@ -27,7 +26,7 @@ shader_param/AB_mix_offset = -6.187
 shader_param/AB_mix_normal = 8.253
 shader_param/AB_mix_blend = 0.039
 shader_param/A_albedo_enabled = true
-shader_param/A_albedo_tint = Color( 0.380392, 0.760784, 0.0627451, 1 )
+shader_param/A_albedo_tint = Color( 0.698039, 0.670588, 0.6, 1 )
 shader_param/A_normal_enabled = true
 shader_param/A_normal_strength = 1.0
 shader_param/A_ao_tex_channel = Plane( 0.33, 0.33, 0.33, 0 )
@@ -37,7 +36,7 @@ shader_param/A_uv_offset = null
 shader_param/A_uv_tiles = 1
 shader_param/A_tri_blend_sharpness = 17.86
 shader_param/B_albedo_enabled = true
-shader_param/B_albedo_tint = Color( 0.666667, 0.470588, 0.384314, 1 )
+shader_param/B_albedo_tint = Color( 0.737255, 0.607843, 0.545098, 1 )
 shader_param/B_normal_enabled = true
 shader_param/B_normal_strength = 1.0
 shader_param/B_normal_distance = 0.025
@@ -53,17 +52,24 @@ shader_param/B_ao_map = ExtResource( 5 )
 [node name="ScriptWorld" type="Spatial"]
 
 [node name="GeneratorManager" type="Spatial" parent="."]
-script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 2 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
 
+[node name="Corpus" type="Spatial" parent="."]
+
+[node name="VoxelVolume" type="VoxelLodTerrain" parent="Corpus"]
+generator = ExtResource( 6 )
+mesher = SubResource( 9 )
+view_distance = 300
+material = SubResource( 5 )
+generate_collisions = false
+
 [node name="PlayerProbe" parent="." instance=ExtResource( 7 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.81282, 0.104535, -11.6521 )
+transform = Transform( -0.0207854, 0, 0.999784, 0, 1, 0, -0.999784, 0, -0.0207854, 5.81282, 0.104535, -11.6521 )
 
 [node name="VoxelCutter" parent="PlayerProbe" instance=ExtResource( 8 )]
 
@@ -74,11 +80,3 @@ script = ExtResource( 2 )
 current = true
 
 [node name="VoxelViewer" type="VoxelViewer" parent="PlayerProbe/ARVROrigin/ARVRCamera"]
-
-[node name="Corpus" type="Spatial" parent="."]
-
-[node name="VoxelVolume" type="VoxelLodTerrain" parent="Corpus"]
-generator = ExtResource( 6 )
-mesher = SubResource( 6 )
-material = SubResource( 5 )
-generate_collisions = false
