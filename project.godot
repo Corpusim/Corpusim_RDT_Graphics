@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Corpusim_PCG_Skin"
+config/name="Corpusim_RDT_Graphics"
 run/main_scene="res://World/World.tscn"
 boot_splash/image="res://Images/Corpusim_Logo_20220105.png"
 config/icon="res://Images/Corpusim_Logo_20220105.png"
