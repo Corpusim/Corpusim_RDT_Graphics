@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Bark001_1K_Displacement.jpg-2c8211d01cef53da8fc528a79f04c187.s3tc.stex"
-path.etc2="res://.import/Bark001_1K_Displacement.jpg-2c8211d01cef53da8fc528a79f04c187.etc2.stex"
+path.s3tc="res://.import/Lava005_1K_Displacement.png-f635ff229b12695a71ee0e2f112e5244.s3tc.stex"
+path.etc2="res://.import/Lava005_1K_Displacement.png-f635ff229b12695a71ee0e2f112e5244.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Materials/Bark/Bark001_1K_Displacement.jpg"
-dest_files=[ "res://.import/Bark001_1K_Displacement.jpg-2c8211d01cef53da8fc528a79f04c187.s3tc.stex", "res://.import/Bark001_1K_Displacement.jpg-2c8211d01cef53da8fc528a79f04c187.etc2.stex" ]
+source_file="res://Materials/Textures/Lava005_1K_Displacement.png"
+dest_files=[ "res://.import/Lava005_1K_Displacement.png-f635ff229b12695a71ee0e2f112e5244.s3tc.stex", "res://.import/Lava005_1K_Displacement.png-f635ff229b12695a71ee0e2f112e5244.etc2.stex" ]
 
 [params]
 
