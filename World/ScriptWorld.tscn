@@ -10,13 +10,43 @@
 
 [sub_resource type="CylinderMesh" id=2]
 
-[sub_resource type="ProceduralSky" id=7]
+[sub_resource type="ProceduralSky" id=10]
+sky_top_color = Color( 0.654902, 0.505882, 0.568627, 1 )
+sky_horizon_color = Color( 0.627451, 0.635294, 0.639216, 1 )
+sky_energy = 1.57
+texture_size = 0
 
-[sub_resource type="Environment" id=8]
-background_mode = 3
-background_sky = SubResource( 7 )
-background_color = Color( 0.258824, 0.203922, 0.203922, 1 )
-background_energy = 3.57
+[sub_resource type="Environment" id=11]
+background_mode = 1
+background_sky = SubResource( 10 )
+background_color = Color( 0.145098, 0.12549, 0.12549, 1 )
+ambient_light_color = Color( 0.447059, 0.447059, 0.447059, 1 )
+ambient_light_energy = 4.91
+fog_enabled = true
+fog_color = Color( 0.145098, 0.12549, 0.12549, 1 )
+fog_depth_begin = 1.0
+fog_depth_end = 110.0
+tonemap_mode = 2
+tonemap_exposure = 0.58
+tonemap_white = 0.38
+ssao_enabled = true
+ssao_radius = 0.73
+ssao_intensity = 27.48
+ssao_radius2 = 1.25
+ssao_intensity2 = 6.87
+ssao_bias = 0.02
+ssao_light_affect = 1.0
+ssao_ao_channel_affect = 1.0
+ssao_color = Color( 0.47451, 0.45098, 0.45098, 1 )
+ssao_blur = 2
+ssao_edge_sharpness = 0.56
+dof_blur_far_distance = 0.49
+dof_blur_far_transition = 57.95
+dof_blur_far_amount = 0.07
+dof_blur_far_quality = 0
+dof_blur_near_distance = 0.03
+dof_blur_near_transition = 46.86
+dof_blur_near_amount = 0.5
 
 [sub_resource type="VoxelMesherTransvoxel" id=9]
 
@@ -57,7 +87,7 @@ shader_param/B_ao_map = ExtResource( 5 )
 mesh = SubResource( 2 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 8 )
+environment = SubResource( 11 )
 
 [node name="Corpus" type="Spatial" parent="."]
 
