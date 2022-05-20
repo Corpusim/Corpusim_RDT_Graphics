@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Probe/Probe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skin/VoxG_DoubleNoise.tres" type="VoxelGeneratorGraph" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Particles/FilamentD.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Particles/FilamentB.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://VR/VR_utilities.gd" type="Script" id=11]
+[ext_resource path="res://UI/Status_Overlay.tscn" type="PackedScene" id=12]
 
 [sub_resource type="VoxelMesherTransvoxel" id=19]
 mesh_optimization_enabled = true
@@ -129,3 +130,7 @@ visible = false
 mesh = SubResource( 12 )
 skeleton = NodePath("../Corpus")
 material/0 = SubResource( 17 )
+
+[node name="Status_Overlay" parent="." instance=ExtResource( 12 )]
+environment = "Spongy Bone"
+shrink_level = "1E3x"
