@@ -165,7 +165,8 @@ void fragment() {
     vec2 pos = st*vec2(10.,10.);//vec2(st*40.0); // stretch for linesw
 	vec4 world_vertex = CAMERA_MATRIX * vec4(VERTEX, 1.0);
 	//    a = snoise(pos*vec2(cos(u_time*0.15),sin(u_time*0.1))*0.1)*3.1415;
-    nodule_mask = vec3( smoothstep(0.5,0.6,noise(pos+sin(.4*TIME+world_vertex.x)+world_vertex.y)+.5 ))*smoothstep(0.08,0.15,noise(0.4*world_vertex.y+.2*sin(.3*TIME)+st*vec2(1.,1.5)));
+    nodule_mask = vec3( smoothstep(0.5,0.6,noise(pos+sin(3.0*TIME+world_vertex.x)+world_vertex.y)+.5 ))
+	*smoothstep(0.08,0.15,noise(0.4*world_vertex.y+.2*sin(2.3*(TIME+fract(world_vertex.xz)))+st*vec2(1.,1.5)));
 	
 	
 	// Lamination
@@ -173,7 +174,7 @@ void fragment() {
 	
 	// Lamination Waves 
 	st_side.y += noise(st*lamination_compression)*lamination_waviness;
-	vec2 pos_side = (st_side.yx - .1*sin(TIME*.4)) * vec2(lamination_layers,1.);
+	vec2 pos_side = (st_side.yx - .1*sin(TIME*(4.0)+4.0*fract(world_vertex.xz) ))* vec2(lamination_layers,1.);
 	
 	vec3 lamination_mask = vec3(1.-lines(pos_side,0.5));
 	
