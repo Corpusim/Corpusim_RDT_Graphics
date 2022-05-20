@@ -9,7 +9,7 @@ fractal_ping_pong_strength = 1.0
 
 [resource]
 graph_data = {
-"connections": [ [ 52, 0, 31, 1 ], [ 38, 0, 49, 1 ], [ 37, 0, 38, 1 ], [ 36, 0, 37, 1 ], [ 35, 0, 37, 0 ], [ 34, 0, 36, 0 ], [ 34, 0, 36, 1 ], [ 33, 0, 35, 0 ], [ 33, 0, 35, 1 ], [ 31, 0, 4, 0 ], [ 19, 0, 21, 0 ], [ 19, 0, 21, 1 ], [ 18, 0, 20, 0 ], [ 18, 0, 20, 1 ], [ 24, 0, 31, 0 ], [ 1, 0, 16, 0 ], [ 23, 0, 24, 0 ], [ 39, 0, 38, 0 ], [ 16, 0, 52, 0 ], [ 20, 0, 25, 0 ], [ 21, 0, 25, 1 ], [ 2, 0, 16, 1 ], [ 25, 0, 24, 1 ], [ 49, 0, 52, 1 ], [ 3, 0, 16, 2 ] ],
+"connections": [ [ 79, 0, 78, 1 ], [ 77, 0, 79, 0 ], [ 76, 0, 77, 0 ], [ 75, 0, 76, 0 ], [ 3, 0, 16, 2 ], [ 25, 0, 24, 1 ], [ 25, 0, 76, 1 ], [ 2, 0, 16, 1 ], [ 21, 0, 25, 1 ], [ 20, 0, 25, 0 ], [ 16, 0, 78, 0 ], [ 23, 0, 24, 0 ], [ 1, 0, 16, 0 ], [ 24, 0, 31, 0 ], [ 18, 0, 20, 0 ], [ 18, 0, 20, 1 ], [ 19, 0, 21, 0 ], [ 19, 0, 21, 1 ], [ 78, 0, 31, 1 ], [ 31, 0, 4, 0 ] ],
 "nodes": {
 "1": {
 "gui_position": Vector2( 300, -40 ),
@@ -58,50 +58,39 @@ graph_data = {
 "type": "InputZ"
 },
 "31": {
-"gui_position": Vector2( 1020, -220 ),
+"gui_position": Vector2( 1520, -160 ),
 "type": "Min"
-},
-"33": {
-"gui_position": Vector2( 240, 380 ),
-"type": "InputY"
-},
-"34": {
-"gui_position": Vector2( 240, 500 ),
-"type": "InputZ"
-},
-"35": {
-"gui_position": Vector2( 420, 380 ),
-"type": "Multiply"
-},
-"36": {
-"gui_position": Vector2( 420, 500 ),
-"type": "Multiply"
-},
-"37": {
-"gui_position": Vector2( 600, 440 ),
-"type": "Add"
-},
-"38": {
-"gui_position": Vector2( 800, 360 ),
-"type": "Add"
-},
-"39": {
-"gui_position": Vector2( 600, 300 ),
-"type": "Constant",
-"value": -250.0
 },
 "4": {
-"gui_position": Vector2( 1500, 120 ),
+"gui_position": Vector2( 1720, 20 ),
 "type": "OutputSDF"
 },
-"49": {
-"a": 0.0,
-"gui_position": Vector2( 940, 280 ),
-"type": "Min"
+"75": {
+"gui_position": Vector2( 700, 300 ),
+"type": "Constant",
+"value": 200.0
 },
-"52": {
-"gui_position": Vector2( 1060, 100 ),
+"76": {
+"gui_position": Vector2( 880, 440 ),
 "type": "Subtract"
+},
+"77": {
+"gui_position": Vector2( 1040, 500 ),
+"max": 200.0,
+"min": 0.0,
+"type": "Clamp"
+},
+"78": {
+"gui_position": Vector2( 1296, 259.2 ),
+"type": "Add"
+},
+"79": {
+"gui_position": Vector2( 1180, 400 ),
+"max0": 200.0,
+"max1": 1.0,
+"min0": 0.0,
+"min1": 0.0,
+"type": "Remap"
 }
 }
 }
