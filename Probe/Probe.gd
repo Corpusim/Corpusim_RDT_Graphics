@@ -77,6 +77,13 @@ func process_input():
 	else:
 		_editing_voxels = false
 		
+	if Input.is_action_just_released("zoom_in"):
+		camera.adjust_zoom(5)
+		
+	elif Input.is_action_just_released("zoom_out"):
+		camera.adjust_zoom(-5)
+		
+		
 	var input_movement_vector = Vector3()
 
 	if Input.is_action_pressed("movement_forward"):

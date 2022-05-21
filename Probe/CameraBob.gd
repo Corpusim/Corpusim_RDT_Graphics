@@ -20,6 +20,14 @@ func _physics_process(delta):
 		rotate_y(.0002*sin(elapsed)+.0001*sin(elapsed*2.0))
 		rotate_x(.0002*cos(elapsed))
 		
+func adjust_zoom(adjust_amount):
+	if fov < 70 and adjust_amount > 0:
+		fov += adjust_amount
+		transform.origin.z -= adjust_amount*.2
+	elif fov > 10 and adjust_amount < 0:
+		fov += adjust_amount
+		transform.origin.z -= adjust_amount*.2
+		
 
 func deactivate_bobbing():
 	bobbing = false
