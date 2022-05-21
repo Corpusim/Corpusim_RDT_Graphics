@@ -133,4 +133,3 @@ material/0 = SubResource( 17 )
 
 [node name="Status_Overlay" parent="." instance=ExtResource( 12 )]
 environment = "Spongy Bone"
-shrink_level = "1E3x"

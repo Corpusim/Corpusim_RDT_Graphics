@@ -103,7 +103,6 @@ environment = SubResource( 11 )
 generator = ExtResource( 6 )
 mesher = SubResource( 9 )
 material = SubResource( 5 )
-generate_collisions = false
 
 [node name="PlayerProbe" parent="." instance=ExtResource( 7 )]
 transform = Transform( -0.0207854, 0, 0.999784, 0, 1, 0, -0.999784, 0, -0.0207854, 5.843, 0.027, -0.007 )
@@ -126,4 +125,3 @@ omni_range = 48.5755
 
 [node name="Status_Overlay" parent="." instance=ExtResource( 10 )]
 environment = "Spongy Bone"
-shrink_level = "1E5x"

@@ -1,12 +1,14 @@
 # Corpusim RDT Graphics
 
-updated 2022-03-16
-
-![Corpusim Image](corpusim_banner.jpg)
+README updated 2022-05-21
 
 This is a **Research, Discovery, and Testing** environment for procedural graphics - one of the core technologies used in [Corpusim](http://www.corpusim.com). 
 
-We've so far focused on implementing squamous epithelial tissues, essentially flaky, flat, barrier layers.
+We've worked on squamous epithelial tissues (flaky, flat, barrier layers) and bone tissue trabeculae (interior, lace-like "spongy bone").
+
+![Corpusim Image](Images/corpusim_banner_1.jpg)
+
+![Corpusim Image](Images/corpusim_banner_2.jpg)
 
 This project is written in [Godot](https://godotengine.org/) 3.4 and the [voxel-tools](https://github.com/Zylann/godot_voxel) plugin.
 
@@ -17,6 +19,8 @@ This project is written in [Godot](https://godotengine.org/) 3.4 and the [voxel-
 <kbd>Space</kbd> <kbd>Shift</kbd> : Up, Down
 
 Mouse : Look / Rotate
+
+Mouse Wheel : Shrink (Zoom)
 
 Mouse Buttons : Add / Remove Tissue (Voxels)
 

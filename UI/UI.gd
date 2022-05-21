@@ -3,10 +3,11 @@ extends Control
 
 
 export(String, "Spongy Bone", "Epithelial Cells") var environment
-export(String, "1E3x", "1E5x") var shrink_level
+
 
 
 onready var label_time = $HBoxContainer/timestamp
+onready var label_shrink = $VBoxContainer/label_shrink
 
 onready var elapsed_sec:float = 0.0
 
@@ -17,8 +18,9 @@ var time
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$VBoxContainer/label_environment.text = environment
-	$VBoxContainer/label_shrink.text = "Shrink " + shrink_level
+	get_node("../PlayerProbe").connect("shrink_level_adjusted",self,"_on_shrink_adjusted")
 	
+	_on_shrink_adjusted(5.0)
 
 
 
@@ -34,3 +36,5 @@ func _process(delta):
 		label_time.text = date + "   " + time
 		elapsed_sec = 0
 	
+func _on_shrink_adjusted(new_val):
+	label_shrink.text = "Shrink: 1E" + "%0.2f" % new_val + "x"

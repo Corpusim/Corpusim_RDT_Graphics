@@ -15,6 +15,9 @@ var dir
 var _editing_voxels = false
 
 
+var shrink_level := 5.0
+
+
 
 var vel = Vector3()
 const MAX_SPEED = 8.0
@@ -25,6 +28,7 @@ const DEACCEL = 2.0
 var camera_rotated = false
 var origin_moved = false
 
+signal shrink_level_adjusted(adj_amt)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -40,6 +44,9 @@ func _ready():
 		vr_cam.clear_current()		
 		desktop_cam.make_current()
 		camera = desktop_cam
+		
+	
+	
 		
 func _process(delta):
 	process_input()
@@ -78,10 +85,12 @@ func process_input():
 		_editing_voxels = false
 		
 	if Input.is_action_just_released("zoom_in"):
-		camera.adjust_zoom(5)
-		
+		shrink_level += camera.adjust_zoom(-5)
+		emit_signal("shrink_level_adjusted", shrink_level)
 	elif Input.is_action_just_released("zoom_out"):
-		camera.adjust_zoom(-5)
+		shrink_level += camera.adjust_zoom(5)
+		emit_signal("shrink_level_adjusted", shrink_level)
+		
 		
 		
 	var input_movement_vector = Vector3()

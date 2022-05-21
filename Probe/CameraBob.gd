@@ -21,12 +21,17 @@ func _physics_process(delta):
 		rotate_x(.0002*cos(elapsed))
 		
 func adjust_zoom(adjust_amount):
+	var shrink_level_adjustment = 0
 	if fov < 70 and adjust_amount > 0:
 		fov += adjust_amount
 		transform.origin.z -= adjust_amount*.2
-	elif fov > 10 and adjust_amount < 0:
+		shrink_level_adjustment = -.2
+	elif fov > 30 and adjust_amount < 0:
 		fov += adjust_amount
 		transform.origin.z -= adjust_amount*.2
+		shrink_level_adjustment = .2
+		
+	return shrink_level_adjustment
 		
 
 func deactivate_bobbing():
