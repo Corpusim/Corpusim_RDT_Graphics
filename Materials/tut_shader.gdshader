@@ -24,6 +24,8 @@ uniform bool		A_albedo_enabled = true;
 uniform vec4 		A_albedo_tint : hint_color = vec4(1., 1., 1., 1.);
 uniform sampler2D 	A_albedo_map : hint_albedo;
 
+
+
 uniform bool		A_normal_enabled = true;
 uniform sampler2D 	A_normal_map : hint_normal;
 uniform float 		A_normal_strength : hint_range(-16., 16.0) = 1.;
@@ -40,6 +42,7 @@ uniform float 		A_tri_blend_sharpness : hint_range(0.001, 50.0) = 17.86;
 uniform bool		B_albedo_enabled = true;
 uniform vec4 		B_albedo_tint : hint_color = vec4(1., 1., 1., 1.);
 uniform sampler2D 	B_albedo_map : hint_albedo;
+
 
 uniform bool		B_normal_enabled = true;
 uniform sampler2D 	B_normal_map : hint_normal;
@@ -134,12 +137,22 @@ void fragment() {
 	
 	vec3 A_albedo, B_albedo;
 	float AB_mix_factor;
+	
 	if(A_albedo_enabled) {
 		ALBEDO = A_albedo = A_albedo_tint.rgb * triplanar_texture(A_albedo_map,A_uv_power_normal,A_uv_triplanar_pos).rgb;
 		AB_mix_factor = clamp( AB_mix_normal*dot(vec3(0.,1.,0.), vertex_normal) + AB_mix_offset + AB_mix_blend*A_albedo.g, 0., 1.);
 	}
 	if(B_albedo_enabled) {
-		ALBEDO = B_albedo = B_albedo_tint.rgb * triplanar_texture(B_albedo_map,B_uv_power_normal,B_uv_triplanar_pos).rgb;
+		float cyclespeed = triplanar_texture(B_ao_map, B_uv_power_normal,B_uv_triplanar_pos).r;
+		ALBEDO = B_albedo = 
+		B_albedo_tint.rgb * .6 * triplanar_texture(B_ao_map,
+		B_uv_power_normal,B_uv_triplanar_pos).rgb + 
+
+		A_albedo_tint.rgb *(.25+.15* (sin( TIME *8. + 30.0*cyclespeed) )  );
+		//B_albedo_tint.rgb * clamp((.2*sin(TIME *.5 * floor(16.0*cyclespeed) ) ),-.2,.2);
+		
+		
+
 	}
 	if(A_albedo_enabled==true && B_albedo_enabled==true) {
 		ALBEDO = mix(B_albedo, A_albedo, AB_mix_factor);

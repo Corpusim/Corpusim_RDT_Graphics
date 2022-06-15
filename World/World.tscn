@@ -132,4 +132,4 @@ skeleton = NodePath("../Corpus")
 material/0 = SubResource( 17 )
 
 [node name="Status_Overlay" parent="." instance=ExtResource( 12 )]
-environment = "Spongy Bone"
+environment = "Epithelial Cells"

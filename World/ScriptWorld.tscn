@@ -52,6 +52,8 @@ dof_blur_far_quality = 0
 dof_blur_near_distance = 0.03
 dof_blur_near_transition = 46.86
 dof_blur_near_amount = 0.5
+adjustment_enabled = true
+adjustment_contrast = 1.26
 
 [sub_resource type="VoxelMesherTransvoxel" id=9]
 
@@ -77,7 +79,7 @@ shader_param/B_normal_strength = 7.4
 shader_param/B_normal_distance = 0.207
 shader_param/B_ao_tex_channel = Plane( 0.33, 0.33, 0.33, 0 )
 shader_param/B_ao_enabled = true
-shader_param/B_ao_strength = 1.0
+shader_param/B_ao_strength = 0.245
 shader_param/B_uv_offset = null
 shader_param/B_uv_tiles = 1
 shader_param/B_tri_blend_sharpness = 17.86
