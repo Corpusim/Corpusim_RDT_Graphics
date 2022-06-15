@@ -117,7 +117,7 @@ transform = Transform( 0.716424, 0.621801, 0.316386, -0.697665, 0.63852, 0.32489
 [node name="VoxelVolume" type="VoxelLodTerrain" parent="Corpus"]
 generator = ExtResource( 2 )
 mesher = SubResource( 19 )
-view_distance = 116
+view_distance = 300
 lod_distance = 90.0
 material = ExtResource( 6 )
 

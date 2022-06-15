@@ -3,7 +3,7 @@ extends KinematicBody
 
 export var VR_Mode : bool = false
 
-var MOUSE_SENSITIVITY = 0.035
+var MOUSE_SENSITIVITY = 0.015
 
 onready var corpus = $"../Corpus"
 onready var camera 
@@ -20,7 +20,7 @@ var shrink_level := 5.0
 
 
 var vel = Vector3()
-const MAX_SPEED = 8.0
+const MAX_SPEED = 6.0
 const CUTTER_RATIO = 0.3
 const ACCEL = 2.0
 const DEACCEL = 2.0
