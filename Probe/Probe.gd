@@ -56,7 +56,8 @@ func process_input():
 	
 	if Input.is_action_just_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
-		
+	
+	
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
@@ -72,7 +73,7 @@ func process_input():
 	if Input.is_action_just_pressed("Quit"):
 		get_tree().quit()
 		
-	if Input.is_mouse_button_pressed(BUTTON_RIGHT):
+	if Input.is_mouse_button_pressed(BUTTON_RIGHT) || Input.is_action_just_pressed("gamepad_dig"):
 		voxel_cutter._action_remove = true
 		_editing_voxels = true
 		
@@ -107,6 +108,17 @@ func process_input():
 		input_movement_vector.y += 1
 	if Input.is_action_pressed("movement_down"):
 		input_movement_vector.y -= 1
+		
+	input_movement_vector.x += Input.get_axis("gamepad_LS_left", "gamepad_LS_right")
+	input_movement_vector.z += Input.get_axis("gamepad_LS_up", "gamepad_LS_down")
+	
+	var trigger_R = Input.get_action_strength("gamepad_trigger_R")
+	var trigger_L = Input.get_action_strength("gamepad_trigger_L")
+	if trigger_R > 0:
+		input_movement_vector.y += trigger_R
+	elif trigger_L > 0:
+		input_movement_vector.y -= trigger_L
+		
 	
 	
 	input_movement_vector = input_movement_vector.normalized()
@@ -162,6 +174,7 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
-
+		
+		
 	
 		
