@@ -65,7 +65,8 @@ void vertex() {
 	
 	// translation
 	VERTEX.x += .4*sin(time)+.6*sin(time*.4);
-	VERTEX.y +=  (1.-smoothstep(4.0,8.0,VERTEX.y))*custom*12.0 + sin(time*.6)+0.4*sin(time*.3);
+	//VERTEX.y +=  (1.-smoothstep(4.0,8.0,VERTEX.y))*custom*12.0 + sin(time*.6)+0.4*sin(time*.3);
+	VERTEX.y +=  -4.0+custom*12.0 + sin(time*.6)+0.4*sin(time*.3);
 	VERTEX.z += .4*sin(time*.25)+.5*sin(time*.55);
 	
 	
