@@ -78,9 +78,9 @@ func process_input():
 		_editing_voxels = true
 		
 		
-	elif Input.is_mouse_button_pressed(BUTTON_LEFT):
-		voxel_cutter._action_place = true
-		_editing_voxels = true
+	#elif Input.is_mouse_button_pressed(BUTTON_LEFT):
+		#voxel_cutter._action_place = true
+		#_editing_voxels = true
 		
 	else:
 		_editing_voxels = false
@@ -118,7 +118,17 @@ func process_input():
 		input_movement_vector.y += trigger_R
 	elif trigger_L > 0:
 		input_movement_vector.y -= trigger_L
+	
+	var heading_horizontal = Input.get_axis("gamepad_RS_right", "gamepad_RS_left")
+	var heading_vertical = Input.get_axis("gamepad_RS_down", "gamepad_RS_up")
+	
+	rotation_helper.rotate_x(deg2rad(heading_vertical))
+	self.rotate_y(deg2rad(heading_horizontal))
 		
+
+	var camera_rot = rotation_helper.rotation_degrees
+	camera_rot.x = clamp(camera_rot.x, -70, 70)
+	rotation_helper.rotation_degrees = camera_rot
 	
 	
 	input_movement_vector = input_movement_vector.normalized()
@@ -129,6 +139,13 @@ func process_input():
 	dir += cam_xform.basis.x * input_movement_vector.x
 	dir += cam_xform.basis.y * input_movement_vector.y
 	dir += cam_xform.basis.z * input_movement_vector.z
+	
+	if Input.is_action_just_pressed("change_world"):
+		if get_parent().name == "World":
+			get_tree().change_scene("res://World/ScriptWorld.tscn")
+		elif get_parent().name == "ScriptWorld":
+			get_tree().change_scene("res://World/World.tscn")
+	
 
 func process_movement(delta):
 	
