@@ -9,7 +9,7 @@
 [ext_resource path="res://Probe/Probe.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Probe/VoxelCutter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Materials/Textures/Bark001_1K_NormalGL.png" type="Texture" id=9]
-[ext_resource path="res://UI/Status_Overlay.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CylinderMesh" id=2]
 

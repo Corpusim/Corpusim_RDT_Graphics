@@ -28,7 +28,8 @@ _global_script_class_icons={
 
 config/name="Corpusim_RDT_Graphics"
 run/main_scene="res://World/World.tscn"
-boot_splash/image="res://Images/Corpusim_Logo_20220105.png"
+boot_splash/image="res://Images/splash-screen.png"
+boot_splash/fullsize=false
 config/icon="res://Images/Corpusim_Logo_20220105.png"
 
 [display]

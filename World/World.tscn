@@ -11,7 +11,7 @@
 [ext_resource path="res://Particles/FilamentD.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://Particles/FilamentB.obj" type="ArrayMesh" id=10]
 [ext_resource path="res://VR/VR_utilities.gd" type="Script" id=11]
-[ext_resource path="res://UI/Status_Overlay.tscn" type="PackedScene" id=12]
+[ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=12]
 
 [sub_resource type="VoxelMesherTransvoxel" id=19]
 mesh_optimization_enabled = true
