@@ -8,9 +8,16 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	process_input()
+	
+func process_input():
+	
+	if Input.is_action_just_pressed("toggle_ui"):
+		if visible == true:
+			visible = false
+		else:
+			visible = true
+	

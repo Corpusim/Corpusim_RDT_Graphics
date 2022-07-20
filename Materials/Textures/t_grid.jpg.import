@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/t_grid.jpg-0b5687ab8fb487ca08a0dc29ca441451.image"
+
+[deps]
+
+source_file="res://Materials/Textures/t_grid.jpg"
+dest_files=[ "res://.import/t_grid.jpg-0b5687ab8fb487ca08a0dc29ca441451.image" ]
+
+[params]
+
