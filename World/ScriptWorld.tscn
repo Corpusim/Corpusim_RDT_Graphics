@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Materials/Textures/Gravel020_1K_NormalGL.png" type="Texture" id=1]
 [ext_resource path="res://VR/VR_utilities.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Probe/VoxelCutter.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Materials/Textures/Bark001_1K_NormalGL.png" type="Texture" id=9]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI/Full_UI.tscn" type="PackedScene" id=11]
 
 [sub_resource type="CylinderMesh" id=2]
 
@@ -127,3 +128,5 @@ omni_range = 48.5755
 
 [node name="Status_Overlay" parent="." instance=ExtResource( 10 )]
 environment = "Spongy Bone"
+
+[node name="Full_UI" parent="." instance=ExtResource( 11 )]

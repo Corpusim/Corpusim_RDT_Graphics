@@ -11,6 +11,7 @@ func _ready():
 	timer.wait_time = 0.2
 	timer.connect("timeout", self, "_reactivate_bobbing")
 	timer.autostart = true
+	_reactivate_bobbing()
 	
 func _physics_process(delta):
 	if bobbing:
