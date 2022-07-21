@@ -22,6 +22,7 @@ size = Vector2( 250, 251 )
 
 [sub_resource type="StyleBoxTexture" id=5]
 texture = SubResource( 6 )
+region_rect = Rect2( 0, 0, 250, 251 )
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 modulate_color = Color( 0.435294, 0.435294, 0.435294, 1 )

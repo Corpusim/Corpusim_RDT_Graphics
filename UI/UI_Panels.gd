@@ -18,6 +18,10 @@ func process_input():
 	if Input.is_action_just_pressed("toggle_ui"):
 		if visible == true:
 			visible = false
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		else:
 			visible = true
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			
 	
+
