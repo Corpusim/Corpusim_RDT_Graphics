@@ -131,7 +131,7 @@ __meta__ = {
 }
 
 [node name="Panel-top" type="Panel" parent="."]
-margin_right = 388.0
+margin_right = 559.0
 margin_bottom = 85.0
 size_flags_horizontal = 0
 theme = ExtResource( 2 )
@@ -141,10 +141,14 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel-top"]
-margin_left = 41.0
-margin_top = 21.0
-margin_right = 329.0
-margin_bottom = 35.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -225.0
+margin_top = -17.0
+margin_right = 225.0
+margin_bottom = 17.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_constants/separation = 0
@@ -153,7 +157,7 @@ __meta__ = {
 }
 
 [node name="File" type="Label" parent="Panel-top/HBoxContainer"]
-margin_right = 96.0
+margin_right = 112.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 text = "File"
@@ -164,31 +168,38 @@ margin_right = 20.0
 margin_bottom = 7.0
 
 [node name="Tools" type="Label" parent="Panel-top/HBoxContainer"]
-margin_left = 96.0
-margin_right = 192.0
+margin_left = 112.0
+margin_right = 225.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 text = "Tools"
 
+[node name="View" type="Label" parent="Panel-top/HBoxContainer"]
+margin_left = 225.0
+margin_right = 337.0
+margin_bottom = 34.0
+size_flags_horizontal = 3
+text = "View"
+
 [node name="Help" type="Label" parent="Panel-top/HBoxContainer"]
-margin_left = 192.0
-margin_right = 288.0
+margin_left = 337.0
+margin_right = 450.0
 margin_bottom = 34.0
 size_flags_horizontal = 3
 text = "Help"
 
 [node name="ColorRect" type="ColorRect" parent="Panel-top"]
-margin_left = 387.0
-margin_right = 390.0
+margin_left = 557.0
+margin_right = 559.0
 margin_bottom = 84.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Panel-top"]
-margin_left = 442.0
+margin_left = 611.0
 margin_top = -4.0
-margin_right = 501.0
+margin_right = 670.0
 margin_bottom = 79.0
 rect_scale = Vector2( -1, 1 )
 size_flags_horizontal = 3
@@ -374,7 +385,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 45.0
-margin_right = -239.0
+margin_right = -4.0
 margin_bottom = -4.0
 
 [node name="Screenshot" type="Label" parent="Panel-RH/VBoxContainer/TabContainer/Record"]
