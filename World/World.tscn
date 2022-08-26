@@ -2,14 +2,14 @@
 
 [ext_resource path="res://Probe/Probe.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Skin/VoxG_DoubleNoise.tres" type="VoxelGeneratorGraph" id=2]
-[ext_resource path="res://Particles/FilamentE.obj" type="ArrayMesh" id=3]
+[ext_resource path="res://Particles/FilamentE.tres" type="ArrayMesh" id=3]
 [ext_resource path="res://World/World_Environment.tres" type="Environment" id=4]
 [ext_resource path="res://Materials/TriPlanar.tres" type="Shader" id=5]
 [ext_resource path="res://Materials/Voxel_Skin_Material.tres" type="Material" id=6]
 [ext_resource path="res://Probe/VoxelCutter.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Particles/Filament_Material.tres" type="Material" id=8]
-[ext_resource path="res://Particles/FilamentD.obj" type="ArrayMesh" id=9]
-[ext_resource path="res://Particles/FilamentB.obj" type="ArrayMesh" id=10]
+[ext_resource path="res://Particles/FilamentB.tres" type="ArrayMesh" id=9]
+[ext_resource path="res://Particles/FilamentD.tres" type="ArrayMesh" id=10]
 [ext_resource path="res://VR/VR_utilities.gd" type="Script" id=11]
 [ext_resource path="res://UI/HUD.tscn" type="PackedScene" id=12]
 [ext_resource path="res://UI/Full_UI.tscn" type="PackedScene" id=13]
@@ -41,7 +41,7 @@ offset_along_normal = 6.0
 [sub_resource type="VoxelInstanceLibraryItem" id=24]
 lod_index = 2
 generator = SubResource( 23 )
-mesh = ExtResource( 9 )
+mesh = ExtResource( 10 )
 material_override = ExtResource( 8 )
 collision_layer = 0
 collision_mask = 0
@@ -55,7 +55,7 @@ offset_along_normal = 6.0
 [sub_resource type="VoxelInstanceLibraryItem" id=26]
 lod_index = 2
 generator = SubResource( 25 )
-mesh = ExtResource( 10 )
+mesh = ExtResource( 9 )
 material_override = ExtResource( 8 )
 collision_layer = 0
 collision_mask = 0
