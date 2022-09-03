@@ -110,7 +110,7 @@ func process_input():
 		input_movement_vector.y -= 1
 		
 	input_movement_vector.x += Input.get_axis("gamepad_LS_left", "gamepad_LS_right")
-	input_movement_vector.z += Input.get_axis("gamepad_LS_up", "gamepad_LS_down")
+	input_movement_vector.z -= Input.get_axis("gamepad_LS_up", "gamepad_LS_down")
 	
 	var trigger_R = Input.get_action_strength("gamepad_trigger_R")
 	var trigger_L = Input.get_action_strength("gamepad_trigger_L")

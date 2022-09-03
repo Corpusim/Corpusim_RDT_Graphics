@@ -100,6 +100,7 @@ shader_param/B_tri_blend_sharpness = 17.86
 
 [node name="PlayerProbe" parent="." instance=ExtResource( 1 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.81282, 0.104535, -11.6521 )
+VR_Mode = true
 
 [node name="VoxelCutter" parent="PlayerProbe" instance=ExtResource( 7 )]
 
@@ -107,9 +108,13 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.81282
 script = ExtResource( 11 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="PlayerProbe/ARVROrigin"]
+projection = 2
 current = true
+size = 0.1
+far = 256.0
 
 [node name="VoxelViewer" type="VoxelViewer" parent="PlayerProbe/ARVROrigin/ARVRCamera"]
+requires_collisions = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
@@ -137,6 +142,8 @@ skeleton = NodePath("../Corpus")
 material/0 = SubResource( 17 )
 
 [node name="Status_Overlay" parent="." instance=ExtResource( 12 )]
+visible = false
 environment = "Epithelial Cells"
 
 [node name="Full_UI" parent="." instance=ExtResource( 13 )]
+visible = false
