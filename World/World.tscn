@@ -105,12 +105,11 @@ VR_Mode = true
 [node name="VoxelCutter" parent="PlayerProbe" instance=ExtResource( 7 )]
 
 [node name="ARVROrigin" type="ARVROrigin" parent="PlayerProbe"]
+world_scale = 0.02
 script = ExtResource( 11 )
 
 [node name="ARVRCamera" type="ARVRCamera" parent="PlayerProbe/ARVROrigin"]
-projection = 2
 current = true
-size = 0.1
 far = 256.0
 
 [node name="VoxelViewer" type="VoxelViewer" parent="PlayerProbe/ARVROrigin/ARVRCamera"]
